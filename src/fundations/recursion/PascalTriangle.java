@@ -10,7 +10,8 @@ package fundations.recursion;
  * @author Arles
  */
 public class PascalTriangle {
-      private static int C(int n, int k) {
+
+    private static int C(int n, int k) {
         if (k > n) {
             return 1;
         }
@@ -19,11 +20,11 @@ public class PascalTriangle {
         }
         return C(n - 1, k - 1) + C(n - 1, k);
     }
-      
+
     public static void main(String[] args) {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j <= i; j++) {
-                System.out.print(C(i,j) + " ");
+                System.out.print(C(i, j) + " ");
             }
             System.out.println();
         }
