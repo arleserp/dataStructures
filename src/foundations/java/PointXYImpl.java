@@ -42,6 +42,7 @@ public class PointXYImpl implements ShapeInterface{
         return 0.0;
     }
 
+    @Override
     public double getVolume() {
         return 0.0;
     }

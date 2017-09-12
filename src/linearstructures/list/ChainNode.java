@@ -12,20 +12,20 @@ package linearstructures.list;
  * conocido como el siguiente (next).
  * @author Arles
  */
-class ChainNode {
+public class ChainNode {
 
-    Object element;
-    ChainNode next;
+    public Object element;
+    public ChainNode next;
     
     //package visible constructors
-    ChainNode() {
+    public ChainNode() {
     }
 
-    ChainNode(Object element) {
+    public ChainNode(Object element) {
         this.element = element;
     }
 
-    ChainNode(Object element, ChainNode next) {
+    public ChainNode(Object element, ChainNode next) {
         this.element = element;
         this.next = next;
     }
