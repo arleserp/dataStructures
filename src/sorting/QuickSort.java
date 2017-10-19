@@ -65,6 +65,7 @@ public class QuickSort {
         // move largest element to right end
         swap(a, a.length - 1, maxPos(a, a.length - 1));
         quickSort(0, a.length - 2);
+        
     }
     
     public static void main(String[] args) {
