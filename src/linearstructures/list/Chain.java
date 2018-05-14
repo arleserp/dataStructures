@@ -17,7 +17,7 @@ public class Chain implements LinearList {
 
     //Constructors
     public Chain(int initialCapacity) {
-        size = initialCapacity;
+        
     }
 
     public Chain() {
