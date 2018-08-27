@@ -6,7 +6,7 @@
 package linearstructures.list;
 
 import utilities.ChangeArrayLength;
-import java.lang.reflect.Array;
+
 
 /**
  *
@@ -106,6 +106,8 @@ public class ArrayLinearList implements LinearList {
     /**
      * All elements with equal or higher index have their index increased by 1.
      *
+     * @param index
+     * @param theElement
      * @throws IndexOutOfBoundsException when index is not between 0 and size
      */
     @Override
