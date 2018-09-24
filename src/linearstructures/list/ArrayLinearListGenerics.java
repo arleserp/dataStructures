@@ -108,6 +108,8 @@ public class ArrayLinearListGenerics<Item> implements LinearListGenerics<Item>, 
     /**
      * All elements with equal or higher index have their index increased by 1.
      *
+     * @param index
+     * @param theElement
      * @throws IndexOutOfBoundsException when index is not between 0 and size
      */
     @Override
@@ -121,6 +123,7 @@ public class ArrayLinearListGenerics<Item> implements LinearListGenerics<Item>, 
             Object[] newArray = (Object[]) Array.newInstance(element.getClass().getComponentType(), 2 * size);
             // copy from old space to new space
             System.arraycopy(element, 0, newArray, 0, size);
+            element = (Item[])newArray;
             // element = ChangeArrayLength.changeLength1D(element, 2 * size);
         }
         // shift elements right one position
