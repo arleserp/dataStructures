@@ -91,15 +91,14 @@ public class HashTable {
             table[b] = new HashEntry(theKey, theElement);
             size++;
             return null;
-        } else {// check if duplicate or table full
-            //****	Duplicate element should be updated, ERROR ***
-            if (table[b].key.equals(theKey)) {
-                Object elementToReturn = table[b].element;
-                return elementToReturn;
-            } else //table is full
-            {
-                throw new IllegalArgumentException("table is full");
-            }
+        } else// check if duplicate or table full
+        if (table[b].key.equals(theKey)) {
+            Object elementToReturn = table[b].element;
+            table[b].element = theElement; //overwrite if key is equal
+            return elementToReturn;
+        } else //table is full
+        {
+            throw new IllegalArgumentException("table is full");
         }
     }
 
@@ -119,21 +118,19 @@ public class HashTable {
     /**
      * test method
      */
-   public static void main (String [] args)
-   {
-      HashTable h = new HashTable(11);
-      h.put(new Integer(80), new Integer(80));
-      h.put(new Integer(40), new Integer(40));
-      h.put(new Integer(65), new Integer(65));
-      h.put(new Integer(14), new Integer(80));
-
-      h.output();
-      System.out.println();
-      /*h.put(new Integer(58), new Integer(58));
+    public static void main(String[] args) {
+        HashTable h = new HashTable(11);
+        h.put(new Integer(80), new Integer(80));
+        h.put(new Integer(40), new Integer(40));
+        h.put(new Integer(65), new Integer(65));
+        h.put(new Integer(14), new Integer(80));       
+        h.output();
+        System.out.println();
+        /*h.put(new Integer(58), new Integer(58));
       h.put(new Integer(24), new Integer(24));
       h.output();
       System.out.println();
-      h.put(new Integer(2), new Integer(2));
+      /*h.put(new Integer(2), new Integer(2));
       h.put(new Integer(13), new Integer(13));
       h.put(new Integer(46), new Integer(46));
       h.put(new Integer(16), new Integer(16));
@@ -148,5 +145,5 @@ public class HashTable {
       // update element
       h.put(new Integer(7), new Integer(29));
       h.output();*/
-   }
+    }
 }

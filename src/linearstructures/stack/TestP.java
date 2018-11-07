@@ -17,8 +17,7 @@ public class TestP {
 
     public static void main(String[] args) {
         Deque stack = new LinkedList<>();
-        
-        
+                
         //DerivedLinkedStack stack = new DerivedLinkedStack();
         Scanner sc = new Scanner(System.in);
         String cad = sc.nextLine();
