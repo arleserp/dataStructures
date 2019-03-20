@@ -12,12 +12,12 @@ import java.util.Iterator;
 /**
  *
  * @author Arles
- * @param <Item>
+ * @param <E>
  */
-public class ArrayLinearListGenerics<Item> implements LinearListGenerics<Item>, Iterable<Item> {
+public class ArrayLinearListGenerics<E> implements LinearListGenerics<E>, Iterable<E> {
 
     // data members
-    protected Item[] element; // array of elements
+    protected E[] element; // array of elements
     protected int size; // number of elements in array
 
     /**
@@ -29,7 +29,7 @@ public class ArrayLinearListGenerics<Item> implements LinearListGenerics<Item>, 
         if (initialCapacity < 1) {
             throw new IllegalArgumentException("initialCapacity must be >= 1");
         }
-        element = (Item[]) new Object[initialCapacity];
+        element = (E[]) new Object[initialCapacity];
     }
 
     /**
@@ -65,9 +65,9 @@ public class ArrayLinearListGenerics<Item> implements LinearListGenerics<Item>, 
      * 1
      */
     @Override
-    public Item get(int index) {
+    public E get(int index) {
         checkIndex(index);
-        return (Item) element[index];
+        return (E) element[index];
     }
 
     /**
@@ -75,7 +75,7 @@ public class ArrayLinearListGenerics<Item> implements LinearListGenerics<Item>, 
      * not in list
      */
     @Override
-    public int indexOf(Item theElement) {
+    public int indexOf(E theElement) {
         // search element[] for theElement
         for (int i = 0; i < size; i++) {
             if (element[i].equals(theElement)) {
@@ -94,10 +94,10 @@ public class ArrayLinearListGenerics<Item> implements LinearListGenerics<Item>, 
      * 1
      * @return removed element
      */
-    public Item remove(int index) {
+    public E remove(int index) {
         checkIndex(index);
         // valid index, shift elements with higher index
-        Item removedElement = element[index];
+        E removedElement = element[index];
         for (int i = index + 1; i < size; i++) {
             element[i - 1] = element[i];
         }
@@ -113,7 +113,7 @@ public class ArrayLinearListGenerics<Item> implements LinearListGenerics<Item>, 
      * @throws IndexOutOfBoundsException when index is not between 0 and size
      */
     @Override
-    public void add(int index, Item theElement) {
+    public void add(int index, E theElement) {
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("index = " + index + " size = " + size);
         }
@@ -123,7 +123,7 @@ public class ArrayLinearListGenerics<Item> implements LinearListGenerics<Item>, 
             Object[] newArray = (Object[]) Array.newInstance(element.getClass().getComponentType(), 2 * size);
             // copy from old space to new space
             System.arraycopy(element, 0, newArray, 0, size);
-            element = (Item[])newArray;
+            element = (E[])newArray;
             // element = ChangeArrayLength.changeLength1D(element, 2 * size);
         }
         // shift elements right one position
@@ -200,8 +200,8 @@ public class ArrayLinearListGenerics<Item> implements LinearListGenerics<Item>, 
 
         ArrayLinearListGenerics<Cientifico> ciencia = new ArrayLinearListGenerics<>();
         ciencia.add(0, new Cientifico("Hawking", "It would not be much of a universe if it wasn't home to the people you love"));
-        ciencia.add(0, new Cientifico("Einstein", "XXX"));
-        ciencia.add(0, new Cientifico("Yiyiz", "YYY"));
+        ciencia.add(0, new Cientifico("Einstein", "If you can't explain it to a six year old, you don't understand it yourself."));
+        ciencia.add(0, new Cientifico("Arles", "I hope you learn a lot in this data structures course. I hope to be a scientist some day."));
         
         Iterator it = ciencia.iterator();
         for(Cientifico c: ciencia){
@@ -213,21 +213,22 @@ public class ArrayLinearListGenerics<Item> implements LinearListGenerics<Item>, 
     }
 
     @Override
-    public Iterator<Item> iterator() {
-        return new Iterator<Item>() {
-            private int i = 0;
+    public Iterator<E> iterator() {
+       return new Iterator<E>(){
+           private int i = 0;
+           @Override
+           public boolean hasNext() {
+               return i < size;
+           }
 
-            @Override
-            public boolean hasNext() {
-                return i < size;
-            }
-
-            @Override
-            public Item next() {
-                return element[i++];
-            }                        
-        };
+           @Override
+           public E next() {
+               return element[i++];
+           }   
+       };           
     }
+
+
 
 }
 
