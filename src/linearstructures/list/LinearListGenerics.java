@@ -5,19 +5,20 @@
  */
 package linearstructures.list;
 
-public interface LinearListGenerics<Item> {
+public interface LinearListGenerics<E> {
 
     public boolean isEmpty();
 
     public int size();
 
-    public Item get(int index);
+    public E get(int index);
 
-    public int indexOf(Item theElement);
+    public int indexOf(E theElement);
 
-    public Item remove(int index);
+    public E remove(int index);
 
-    public void add(int index, Item theElement);
+    public void add(int index, E theElement);
 
+    @Override
     public String toString();
 }
