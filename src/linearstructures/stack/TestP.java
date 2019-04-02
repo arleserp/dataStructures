@@ -3,12 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package linearstructures.stack;
 
-import java.util.Deque;
-import java.util.LinkedList;
+
 import java.util.Scanner;
-
+import java.util.Stack;
 /**
  *
  * @author arlese.rodriguezp
@@ -16,7 +14,7 @@ import java.util.Scanner;
 public class TestP {
 
     public static void main(String[] args) {
-        Deque stack = new LinkedList<>();
+        Stack stack = new Stack();
                 
         //DerivedLinkedStack stack = new DerivedLinkedStack();
         Scanner sc = new Scanner(System.in);
