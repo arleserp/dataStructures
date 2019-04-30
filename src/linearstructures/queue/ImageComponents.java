@@ -112,3 +112,16 @@ public class ImageComponents {
         outputImage();
     }
 }
+
+
+/*
+Input: 
+7
+0 0 1 0 0 0 0
+0 0 1 1 0 0 0
+0 0 0 0 1 0 0
+0 0 0 1 1 0 0
+1 0 0 0 1 0 0
+1 1 1 0 0 0 0
+1 1 1 0 0 0 0
+*/
