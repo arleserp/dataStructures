@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- *
+ * Este código define una clase que implementa la interfaz comparable
+ * se puede observar como se pueden comparar dos magos por nombre (comentariado)
+ * o por edad.
  * @author arlese.rodriguezp
  */
 public class MagiciansC implements Comparable {
@@ -32,11 +34,11 @@ public class MagiciansC implements Comparable {
     public int compareTo(Object t) {
         MagiciansC temp = (MagiciansC)t;
         if(this.age == temp.age){
-            return 0;
+            return 0; //igual
         }else if(this.age > temp.age){
-            return 1;
+            return 1; //mayor
         }else{
-            return -1;
+            return -1; //menor
         }
     }
 
@@ -54,7 +56,9 @@ public class MagiciansC implements Comparable {
         magicians.add(new MagiciansC("McGonagall", 84));
         
         System.out.println("before sort: " + magicians);
-        Collections.sort(magicians);
+        //El ordenamiento aquí funciona porque Magician implementa Comparable
+        Collections.sort(magicians); //Se llama Collections.sort para utilizar la librería de Java que ordena un ArrayList
+        
         System.out.println("after sort: " + magicians);
         
     }

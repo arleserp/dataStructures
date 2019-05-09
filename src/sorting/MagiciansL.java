@@ -37,11 +37,13 @@ public class MagiciansL {
 
         System.out.println("before sort: " + magicians);        
 
+        //Expresión lambda para ordenar un arreglo comparando por nombre.
         Collections.sort(magicians, (o1, o2) -> {
             return o1.name.compareTo(o2.name);
         });
         System.out.println("sorted ascending by name: " + magicians);
 
+        //Expresión lambda para ordenar un arreglo comparando los magos por edad.
         Collections.sort(magicians, (o1, o2)->{
             return o1.age.compareTo(o2.age)*-1;
         });
