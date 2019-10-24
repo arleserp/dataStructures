@@ -6,6 +6,7 @@
 package sorting;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 /**
@@ -30,7 +31,7 @@ public class MagiciansCCallRecursiveMerge {
         //Aqui ya puedo llamar nuestro recursiveMergeSort        
         System.out.println("before sort: " + magicians);
         RecursiveMergeSort.mergesort((Comparable[])magiciansArray);
-        System.out.println("after sort: " + magicians);
+        System.out.println("after sort: " + Arrays.asList(magiciansArray));
         
     }        
 }
