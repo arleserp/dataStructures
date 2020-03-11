@@ -214,22 +214,19 @@ public class ArrayLinearListGenerics<E> implements LinearListGenerics<E>, Iterab
 
     @Override
     public Iterator<E> iterator() {
-       return new Iterator<E>(){
-           private int i = 0;
-           @Override
-           public boolean hasNext() {
-               return i < size;
-           }
+        return new Iterator<E>() {
+            int i=0;
+            @Override
+            public boolean hasNext() {
+                return i < size;
+            }
 
-           @Override
-           public E next() {
-               return element[i++];
-           }   
-       };           
+            @Override
+            public E next() {
+                return element[i++];          
+            }
+        };
     }
-
-
-
 }
 
 class Cientifico {
