@@ -19,17 +19,21 @@ public class TestQueueJava {
         q.add("B");
         q.add("C");
         q.add("D");
-        System.out.println(q);
+        System.out.println(q); // A B C D
         
         System.out.println("First Element:" + q.getFirst());
-        System.out.println("First Element:" + q.getLast());
-        for (int i = 0; i < 4; i++) {
+        System.out.println("Last Element:" + q.getLast());
+        
+        int rotaciones = 3;
+        for (int i = 0; i < rotaciones; i++) {
             q.add(q.remove()); //operacion mágica :v
         }
         
         System.out.println(q);
-        /*while(!q.isEmpty()){
+        
+        //Ciclo tradicional
+        while(!q.isEmpty()){
             System.out.println("atiende a " + q.remove());
-        }*/
+        }
     }
 }

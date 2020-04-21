@@ -20,7 +20,9 @@ public class QueueJavaExample {
         q.add(2);
         q.add(3);
         q.add(4);
-
+        
+        //System.out.println("size q: " + q.size());
+        
         while (!q.isEmpty()) {
             System.out.println("Rear element is "
                     + q.getLast());

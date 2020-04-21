@@ -17,6 +17,7 @@ public class LinkedQueue implements Queue {
     protected ChainNode front;
     protected ChainNode rear;
 
+
     public LinkedQueue() {
     }
 
