@@ -5,8 +5,7 @@
  */
 package utilities;
 
-public class MyInputException
-        extends RuntimeException {
+public class MyInputException extends RuntimeException {
 
     public MyInputException() {
         super();
