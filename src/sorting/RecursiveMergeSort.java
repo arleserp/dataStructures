@@ -35,7 +35,7 @@ public class RecursiveMergeSort {
         int index = leftStart;
 
         while (left <= leftEnd && right <= rightEnd) {
-            if (array[left].compareTo(array[right]) == -1 || array[left].compareTo(array[right]) == 0) {
+            if (array[left].compareTo(array[right]) <= 0) {
                 temp[index] = array[left];
                 left++;
             } else {
@@ -45,19 +45,8 @@ public class RecursiveMergeSort {
             index++;
         }
 
-        // take care of leftovers
-        if (left > leftEnd) {
-            System.arraycopy(array, right, temp, index, rightEnd - right + 1);
-            /*for (int q = right; q <=  rightEnd; q++) {
-                temp[index++] = array[q];
-            }*/
-        } else {
-            System.arraycopy(array, left, temp, index, leftEnd - left + 1);
-            /*for (int q = left ; q <= leftEnd; q++) {
-                temp[index++] = array[q];
-            }*/
-        }
-
+        System.arraycopy(array, left, temp, index, leftEnd - left + 1);
+        System.arraycopy(array, right, temp, index, rightEnd - right + 1);
         System.arraycopy(temp, leftStart, array, leftStart, size);
     }
 
