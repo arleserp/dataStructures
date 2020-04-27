@@ -43,7 +43,7 @@ public class MagiciansL {
         });
         System.out.println("sorted ascending by name: " + magicians);
 
-        //Expresión lambda para ordenar un arreglo comparando los magos por edad.
+        //Expresión lambda para ordenar un arreglo comparando los magos por edad descendente.
         Collections.sort(magicians, (o1, o2)->{
             return o1.age.compareTo(o2.age)*-1;
         });

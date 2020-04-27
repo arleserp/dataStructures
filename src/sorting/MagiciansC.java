@@ -14,7 +14,7 @@ import java.util.Collections;
  * o por edad.
  * @author arlese.rodriguezp
  */
-public class MagiciansC implements Comparable {
+public class MagiciansC implements Comparable<MagiciansC> {
     public String name;
     public int age;
 
@@ -23,19 +23,18 @@ public class MagiciansC implements Comparable {
         this.age = age;
     }
     
-    /*
-    @Override
-    public int compareTo(Object t) {
-        return this.name.compareTo(((MagiciansC)t).name);
+    
+    /*@Override
+    public int compareTo(MagiciansC other) {
+        return this.name.compareTo(other.name);
     }*/
     
     //by age
     @Override
-    public int compareTo(Object t) {
-        MagiciansC temp = (MagiciansC)t;
-        if(this.age == temp.age){
-            return 0; //igual
-        }else if(this.age > temp.age){
+    public int compareTo(MagiciansC other) {
+        if(this.age == other.age){
+            return 0;//igual
+        }else if(this.age > other.age){
             return 1; //mayor
         }else{
             return -1; //menor
@@ -49,11 +48,12 @@ public class MagiciansC implements Comparable {
     
     public static void main(String[] args) {
         ArrayList<MagiciansC> magicians = new ArrayList<>();
-        magicians.add(new MagiciansC("Gandalf", 2019));
+        magicians.add(new MagiciansC("Gandalf", 150));
+        magicians.add(new MagiciansC("McGonagall", 150));
         magicians.add(new MagiciansC("Dumbledore", 150));
         magicians.add(new MagiciansC("Lorgia", 68));
         magicians.add(new MagiciansC("Houdini", 52));
-        magicians.add(new MagiciansC("McGonagall", 84));
+        magicians.add(new MagiciansC("Harry Potter", 22));
         
         System.out.println("before sort: " + magicians);
         //El ordenamiento aquí funciona porque Magician implementa Comparable
