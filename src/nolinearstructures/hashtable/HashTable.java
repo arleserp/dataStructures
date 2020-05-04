@@ -52,7 +52,7 @@ public class HashTable {
     private int search(Object theKey) {
         int i = Math.abs(theKey.hashCode()) % divisor;  // home bucket
         int j = i;    // start at home bucket
-        do {
+        do { //&& AND // || OR
             if (table[j] == null || table[j].key.equals(theKey)) {
                 return j;
             }
@@ -94,7 +94,7 @@ public class HashTable {
             table[b] = new HashEntry(theKey, theElement);
             size++;
             return null;
-        } else if (table[b].key.equals(theKey)) { 
+        } else if (table[b].key.equals(theKey)) {
             Object elementToReturn = table[b].element;
             table[b].element = theElement; //overwrite if key is equal
             return elementToReturn;
@@ -122,6 +122,8 @@ public class HashTable {
      */
     public static void main(String[] args) {
         HashTable h = new HashTable(11);
+        
+
         ArrayList<String> frases = new ArrayList<>();
         frases.add("Hogwarts es nuestro lugar seguro");
         frases.add("corred insensatos");
@@ -130,33 +132,33 @@ public class HashTable {
         System.out.println("mago:" + mago.hashCode());
         h.put(frases, 25);
         h.put(mago, frases);
-        
-        //h.put(new Integer(80), new Integer(80));
 /*
-        h.put(new Integer(40), new Integer(40));
+        h.put(new Integer(80), mago);
+
+        h.put(new Integer(40), "hola mundos");
 
         h.put(new Integer(65), new Integer(65));
         h.put(new Integer(14), new Integer(14));
-        h.output();      
+        h.output();
         System.out.println();
         h.put(new Integer(58), new Integer(58));
         h.put(new Integer(24), new Integer(24));
         h.output();
-      System.out.println();
-      h.put(new Integer(2), new Integer(2));
-      h.put(new Integer(13), new Integer(13));
-      h.put(new Integer(46), new Integer(46));
-     /* h.put(new Integer(16), new Integer(16));
+        System.out.println();
+        h.put(new Integer(2), new Integer(2));
+        h.put(new Integer(13), new Integer(13));
+        h.put(new Integer(46), new Integer(46));
+        /*h.put(new Integer(16), new Integer(16));
       h.put(new Integer(7), new Integer(7));
-      h.put(new Integer(21), new Integer(21));*/
+      h.put(new Integer(21), new Integer(21));
       h.output();
       System.out.println();
      /* try {h.put(new Integer(99), new Integer(99));}
       catch (Exception e)
       {System.out.println(" No memory for 99");}
       System.out.println();*/
-      // update element
-      /*h.put(new Integer(7), new Integer(29));
+        // update element
+        /*h.put(new Integer(7), new Integer(29));
       h.put(new Integer(7), new Integer(17));
       h.output();*/
     }
