@@ -69,14 +69,25 @@ public class AdjacencyList {
             ady[destino].add(origen);
             e--;
         }
-        dfs(0);
         
-        /*bfs(0);
+        /*
+        mostrar el grafo
+        System.out.println("entra");
+        for (int i = 0; i < v; i++) {
+            
+            System.out.println(i + "->" + ady[i]);
+        }
+        */
+        
+        /*
+        bfs(0);
         System.out.println("Distances from node 0");
         for (int i = 0; i < v; i++) {
             System.out.println(i + " :" + distance[i]);
-        }*/
+        }
+        */
         
+        //dfs(0);
         
         /*for(int i=0; i < v; i++){
             if (!marked[i]) {
@@ -94,3 +105,14 @@ public class AdjacencyList {
         }
     }
 }
+
+
+/*
+6
+5
+0 1
+1 2
+3 4
+3 5
+4 5
+*/
