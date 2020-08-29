@@ -12,6 +12,7 @@ package fundations.recursion;
 public class Raiz {
 
     private static double buscar(double n, double st, double end) {
+        //System.out.println(st + "-" + end);    
         double mid = (st + end) / 2;
         if (Math.abs(mid * mid - n) < 1e-12) {
             return mid;
