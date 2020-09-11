@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package foundations.java;
+package foundations.java.esun;
 
 /**
  *
@@ -37,10 +37,12 @@ public class Circle extends PointXY {
         return Math.PI * getDiameter();
     }
 
+    @Override
     public double getArea() {
         return Math.PI * getRadius() * getRadius();
     }
 
+    @Override
     public String getName() {
         return "Circle";
     }
@@ -49,4 +51,12 @@ public class Circle extends PointXY {
     public String toString() {
         return "Center = " + super.toString() + "; Radius = " + getRadius();
     }
+    
+    public static void main(String[] args) {
+        Circle c = new Circle(2, 1, 4.2);
+        System.out.println(c.getName());
+        System.out.println(c.getArea());
+        System.out.println(c);
+    }
+    
 }

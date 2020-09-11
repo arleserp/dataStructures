@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package foundations.java;
+package foundations.java.esun;
 
 /**
  *
  * @author Arles
  */
-public abstract class Shape extends Object {
+public abstract class Shape {
 
     public double getArea() {
         return 0.0;
@@ -19,5 +19,5 @@ public abstract class Shape extends Object {
         return 0.0;
     }
 
-    public abstract String getName();
+    public abstract String getName();    
 }

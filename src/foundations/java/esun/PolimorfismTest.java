@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package foundations.java;
+package foundations.java.esun;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -33,12 +35,33 @@ public class PolimorfismTest {
         }
     }
 
-
     public static void main(String args[]) {
-        Shape[] a = {new PointXY(7, 11),
-            new Circle(22, 8, 3.5), null,
-            new Cylinder(20, 30, 3.3, 10.75)};
-        printAll(a);
-        System.out.println("Total area=" + totalArea(a));
+        Shape p = new PointXY(7, 11);
+        Shape c = new Circle(22, 8, 3.5);
+        Shape k = null;
+        Shape cil = new Cylinder(20, 30, 3.3, 10.75);
+
+        Shape[] figuras = {p, c, k, cil};
+
+        System.out.println("------ print all ------------");
+        printAll(figuras);
+
+        System.out.println("----- for each Arrays -----");
+        for (Shape fig : figuras) {
+            if (fig != null) {
+                System.out.println(fig.getName() + "," + fig);
+            }
+        }
+        System.out.println("-----for each ArrayList--------");
+        ArrayList<Shape> figurasArrayList = new ArrayList<>();
+        figurasArrayList.add(p);
+        figurasArrayList.add(cil);
+        figurasArrayList.add(p);
+        figurasArrayList.add(p);
+        figurasArrayList.add(cil);
+
+        for (Shape f : figurasArrayList) {
+            System.out.println(f.getName() + "," + f);
+        }
     }
 }

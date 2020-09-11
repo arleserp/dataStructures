@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package foundations.java;
+package foundations.java.esun;
 
 /**
  *
@@ -37,14 +37,23 @@ public class PointXY extends Shape {
         return y;
     }
 
-    @Override
-    public String getName() {
-        return "Point";
-    }
 
     @Override
     public String toString() {
         return "[" + getX() + ", " + getY() + "]";
+    }
+
+    @Override
+    public String getName() {
+        return "Point";
+    }
+    
+    public static void main(String[] args) {
+        PointXY k = new PointXY(2, 3);
+        System.out.println(k.getName());
+        System.out.println(k.getArea());
+        System.out.println(k.getVolume());
+        System.out.println(k);
     }
 }
 

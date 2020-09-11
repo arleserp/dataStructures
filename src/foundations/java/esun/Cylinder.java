@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package foundations.java;
+package foundations.java.esun;
 
 /**
  *
@@ -34,6 +34,7 @@ public class Cylinder extends Circle {
         return 2 * super.getArea() + getCircumference() * getHeight();
     }
 
+    @Override
     public double getVolume() {
         return super.getArea() * getHeight();
     }
@@ -46,5 +47,15 @@ public class Cylinder extends Circle {
     @Override
     public String toString() {
         return super.toString() + "; Height = " + getHeight();
+    }
+    
+    public static void main(String[] args) {
+       Cylinder c = new Cylinder(2,1,4.2,10.0);
+       
+       System.out.println(c.getName());
+       System.out.println(c.getArea());
+       System.out.println(c.getVolume()); 
+       System.out.println(c);
+       
     }
 }
