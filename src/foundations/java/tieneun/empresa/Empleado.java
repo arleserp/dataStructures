@@ -3,24 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package foundations.java.tieneun;
+package foundations.java.tieneun.empresa;
 
 /**
  *
  * @author Arles
  */
-public class Pasajero {
+public class Empleado {
     private String nombre;
-    private int cedula;
+    private int codigo;
+    private double salario;
 
-    public Pasajero(String nombre, int cedula) {
+    public Empleado(String nombre, int codigo, double salario) {
         this.nombre = nombre;
-        this.cedula = cedula;
+        this.codigo = codigo;
+        this.salario = salario;
     }
 
     @Override
     public String toString() {
-        return "Pasajero{" + "nombre=" + nombre + ", cedula=" + cedula + '}';
+        return "nombre: " + nombre + "\ncodigo:" + codigo + "\nsalario:" + salario;
     }
+    
     
 }
