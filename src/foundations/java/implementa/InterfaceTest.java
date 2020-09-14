@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package foundations.java;
+package foundations.java.implementa;
 
 /**
  *
@@ -18,9 +18,11 @@ public class InterfaceTest {
         ShapeInterface a[] = {
             new PointXYImpl(7, 11),
             new PointXYImpl(3, 5),
-            new PointXYImpl(7, 4),};
+            new PointXYImpl(7, 4),
+            new Duck(),
+        };
 
-        for (int i = 0; i < a.length; i++) {
+        for(int i = 0; i < a.length; i++) {
             System.out.println(
                     a[i].getName() + ": "
                     + a[i].toString() + "\nArea="

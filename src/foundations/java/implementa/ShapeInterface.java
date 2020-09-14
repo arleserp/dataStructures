@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package foundations.java;
+package foundations.java.implementa;
 
 /**
  *
@@ -16,6 +16,6 @@ public interface ShapeInterface {
 
     public double getVolume();
 
-    public abstract String getName();
+    public String getName();
 
 }

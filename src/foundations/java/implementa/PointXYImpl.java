@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package foundations.java;
+package foundations.java.implementa;
+
+import foundations.java.implementa.ShapeInterface;
 
 /**
  *
@@ -38,6 +40,11 @@ public class PointXYImpl implements ShapeInterface{
     }
 
     @Override
+    public String toString() {
+        return "[" + getX() + ", " + getY() + "]";
+    }
+
+    @Override
     public double getArea() {
         return 0.0;
     }
@@ -50,11 +57,6 @@ public class PointXYImpl implements ShapeInterface{
     @Override
     public String getName() {
         return "Point";
-    }
-
-    @Override
-    public String toString() {
-        return "[" + getX() + ", " + getY() + "]";
     }
 
 }
