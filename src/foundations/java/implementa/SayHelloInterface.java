@@ -9,12 +9,7 @@ package foundations.java.implementa;
  *
  * @author Arles
  */
-public interface ShapeInterface {
-    
-    public double getArea();
-
-    public double getVolume();
-
-    public String getName();
-
+public interface SayHelloInterface {
+   
+    public void sayHello();
 }

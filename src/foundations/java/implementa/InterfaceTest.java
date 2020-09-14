@@ -21,7 +21,7 @@ public class InterfaceTest {
             new PointXYImpl(7, 4),
             new Duck(),
         };
-
+                  
         for(int i = 0; i < a.length; i++) {
             System.out.println(
                     a[i].getName() + ": "
@@ -31,6 +31,11 @@ public class InterfaceTest {
                     + twoDigits.format(a[i].getVolume()));
             System.out.println();
         }
+        
+        System.out.println("saluda el patico: ");
+        SayHelloInterface elMismoPato = (SayHelloInterface)a[3];        
+        (elMismoPato).sayHello();
+        
     }
 }
 

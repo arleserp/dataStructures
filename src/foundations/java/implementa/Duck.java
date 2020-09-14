@@ -9,7 +9,7 @@ package foundations.java.implementa;
  *
  * @author Arles
  */
-public class Duck implements ShapeInterface {
+public class Duck implements ShapeInterface, SayHelloInterface {
 
     @Override
     public double getArea() {
@@ -30,7 +30,9 @@ public class Duck implements ShapeInterface {
     public String toString() {
         return "Patito";
     }
-    
-    
-    
+
+    @Override
+    public void sayHello() {
+        System.out.println("Quack Quack");
+    }    
 }
