@@ -19,5 +19,6 @@ public interface LinearList {
 
     public void add(int index, Object theElement);
 
+    @Override
     public String toString();
 }

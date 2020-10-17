@@ -13,7 +13,6 @@ import utilities.ChangeArrayLength;
  * @author Arles
  */
 public class ArrayLinearList implements LinearList {
-
     // data members
     protected Object[] element; // array of elements
     protected int size; // number of elements in array
@@ -38,13 +37,13 @@ public class ArrayLinearList implements LinearList {
     }
 
     @Override
-    public boolean isEmpty() {
-        return size == 0;
+    public boolean isEmpty() { //O(1)
+        return size == 0; 
     }
 
     @Override
-    public int size() {
-        return size;
+    public int size() {  //O(1)
+        return size; 
     }
 
     /**
@@ -58,6 +57,7 @@ public class ArrayLinearList implements LinearList {
     }
 
     /**
+     * @param index position to get
      * @return element with specified index
      * @throws IndexOutOfBoundsException when index is not between 0 and size -
      * 1
@@ -65,15 +65,16 @@ public class ArrayLinearList implements LinearList {
     @Override
     public Object get(int index) {
         checkIndex(index);
-        return element[index];
+        return element[index]; //O(1)
     }
 
     /**
+     * @param theElement to search
      * @return index of first occurrence of theElement, return -1 if theElement
      * not in list
      */
     @Override
-    public int indexOf(Object theElement) {
+    public int indexOf(Object theElement) { //O(size)
         // search element[] for theElement
         for (int i = 0; i < size; i++) {
             if (element[i].equals(theElement)) {
@@ -88,11 +89,13 @@ public class ArrayLinearList implements LinearList {
      * Remove the element with specified index. All elements with higher index
      * have their index reduced by 1.
      *
+     * @param index position of element to be deleted
      * @throws IndexOutOfBoundsException when index is not between 0 and size -
      * 1
      * @return removed element
      */
-    public Object remove(int index) {
+    @Override
+    public Object remove(int index) { //O(size)
         checkIndex(index);
         // valid index, shift elements with higher index
         Object removedElement = element[index];
