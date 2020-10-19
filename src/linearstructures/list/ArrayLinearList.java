@@ -131,7 +131,16 @@ public class ArrayLinearList implements LinearList {
     }
 
     /**
+     * Añade un elemento al final de la lista
+     * @param theElement 
+     */
+    public void add(Object theElement) {
+        add(size, theElement);        
+    }
+    
+    /**
      * convert to a string
+     * @return a String that represents List elements.
      */
     @Override
     public String toString() {
@@ -141,7 +150,7 @@ public class ArrayLinearList implements LinearList {
             if (element[i] == null) {
                 s.append("null, ");
             } else {
-                s.append(element[i].toString() + ", ");
+                s.append(element[i].toString()).append(", ");
             }
         }
         if (size > 0) {
