@@ -156,59 +156,22 @@ public class ArrayLinearListGenerics<E> implements LinearListGenerics<E>, Iterab
         return new String(s);
     }
 
-    public static void main(String[] args) {
-        LinearListGenerics x = new ArrayLinearListGenerics();
-        System.out.println("Initial size is " + x.size());
-        if (x.isEmpty()) {
-            System.out.println("List is empty");
-        } else {
-            System.out.println("The list is not empty");
-        }
-        x.add(0, new Integer(2));
-        x.add(1, new Integer(6));
-        x.add(0, new Integer(1));
-        x.add(2, new Integer(4));
-        System.out.println("List size is " + x.size());
-        System.out.println("The list is " + x);
-        int index = x.indexOf(new Integer(4));
-        if (index < 0) {
-            System.out.println("4 not found");
-        } else {
-            System.out.println("The index of 4 is " + index);
-        }
-        index = x.indexOf(new Integer(3));
-        if (index < 0) {
-            System.out.println("3 not found");
-        } else {
-            System.out.println("The index of 3 is " + index);
-        }
-        System.out.println("Element at 0 is " + x.get(0));
-        System.out.println("Element at 3 is " + x.get(3));
-        System.out.println(x.remove(1) + " removed");
-        System.out.println("The list is " + x);
-        System.out.println(x.remove(2) + " removed");
-        System.out.println("The list is " + x);
-        if (x.isEmpty()) {
-            System.out.println("List is empty");
-        } else {
-            System.out.println("List is not empty");
-        }
-        System.out.println("List size is " + x.size());
-        ArrayLinearListGenerics<String> hola = new ArrayLinearListGenerics<>();
-        hola.add(0, "HOLA");
-        System.out.println(hola.get(0).toLowerCase());
-
+    public static void main(String[] args) {       
         ArrayLinearListGenerics<Cientifico> ciencia = new ArrayLinearListGenerics<>();
         ciencia.add(0, new Cientifico("Hawking", "It would not be much of a universe if it wasn't home to the people you love"));
         ciencia.add(0, new Cientifico("Einstein", "If you can't explain it to a six year old, you don't understand it yourself."));
         ciencia.add(0, new Cientifico("Arles", "I hope you learn a lot in this data structures course. I hope to be a scientist some day."));
-        
-        Iterator it = ciencia.iterator();
+               
+        System.out.println("Recorrer con foreach");
         for(Cientifico c: ciencia){
             System.out.println(c);       
-            
         }
-        System.out.println(hola.get(0).toLowerCase());
+        
+        System.out.println("Recorrer la lista con iterador");
+        Iterator<Cientifico> it = ciencia.iterator();
+        while(it.hasNext()){
+            System.out.println(it.next().baba());
+        }                
 
     }
 
