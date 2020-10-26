@@ -9,33 +9,42 @@ package generics.example;
  *
  * @author Arles
  */
-public class Box<T> {
+public class Box {
 
-    private T object;
+    private Object object;
 
-    public void set(T object) {
+    public void set(Object object) {
         this.object = object;
     }
 
-    public T get() {
+    public Object get() {
         return object;
     }
-
+    
     public static void main(String[] args) {
         Box b = new Box();
         b.set("Hola");
-        System.out.println(((String) b.get()).toUpperCase());        
-        
-        Box<String> d = new Box<>();
-        d.set("Hola");
-        System.out.println(d.get().toUpperCase());
-        
-        Box<Integer> i = new Box<>();
-        i.set(3);
-        System.out.println(i.get()+1);
-        
-        Box<Double> c = new Box();
+        System.out.println(b.get().toString().toUpperCase());
+    
+        Box c = new Box();
         c.set(2.3);
-        System.out.println(c.get() + 1.0);
+        double res = (double)c.get() + 1.0;
+        System.out.println(res);
+        
+        Box d = new Box();
+        d.set(new NotengoIdea("jum"));
+        ((NotengoIdea)d.get()).responder();
+    }        
+}
+
+class NotengoIdea{
+    private String algo;
+
+    public NotengoIdea(String algo) {
+        this.algo = algo;
+    }
+    
+    public void responder(){
+        System.out.println("No tengo idea");
     }
 }
