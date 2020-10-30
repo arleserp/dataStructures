@@ -17,7 +17,7 @@ public class Chain implements LinearList {
 
     //Constructors
     public Chain(int initialCapacity) {
-        
+
     }
 
     public Chain() {
@@ -113,15 +113,22 @@ public class Chain implements LinearList {
     public String toString() {
         StringBuffer s = new StringBuffer("[");
         // put elements into the buffer
-        ChainNode currentNode = firstNode;
-        while (currentNode != null) {
+        for (ChainNode currentNode = firstNode; currentNode != null; currentNode = currentNode.next) {
+            if (currentNode.element == null) {
+                s.append("null, ");
+            } else {
+                s.append(currentNode.element.toString()).append(", ");
+            }
+        }
+        /*ChainNode currentNode = firstNode
+            while (currentNode != null) {
             if (currentNode.element == null) {
                 s.append("null, ");
             } else {
                 s.append(currentNode.element.toString() + ", ");
             }
             currentNode = currentNode.next;
-        }
+        }*/
         // remove last ", "
         if (size > 0) {
             s.delete(s.length() - 2, s.length());

@@ -20,6 +20,7 @@ public class TestChain {
         } else {
             System.out.println("The list is not empty");
         }
+        System.out.println("x:" + x);
         x.add(0, new Integer(2));
         x.add(1, new Integer(6));
         x.add(0, new Integer(1));
