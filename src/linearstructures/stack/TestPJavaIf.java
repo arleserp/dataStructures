@@ -1,3 +1,5 @@
+package linearstructures.stack;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,7 +13,7 @@ import java.util.Stack;
  *
  * @author arlese.rodriguezp
  */
-public class TestP {
+public class TestPJavaIf {
 
     public static void main(String[] args) {
         Stack stack = new Stack();
@@ -27,7 +29,7 @@ public class TestP {
             }
             if (cad.charAt(i) == ')') {
                 try {
-                    stack.pop();
+                    System.out.println(stack.pop() + ", " + i);
                 } catch (Exception ex) {
                     System.out.println("falta abrir el parentesis que se cierra en " + i);
                     error = true;                    
@@ -38,9 +40,9 @@ public class TestP {
             System.out.println("Falta un ) para cerrar el parentesis abierto en " + stack.pop());
             error = true;
         } 
-        if(!error) {
+        /*if(!error) {
             System.out.println("Match!");
-        }
+        }*/
 
     }
 
