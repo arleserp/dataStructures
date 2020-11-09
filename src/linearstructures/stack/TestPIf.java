@@ -13,7 +13,7 @@ import java.util.Stack;
  *
  * @author arlese.rodriguezp
  */
-public class TestPJavaIf {
+public class TestPIf {
 
     public static void main(String[] args) {
         Stack stack = new Stack();
@@ -28,9 +28,9 @@ public class TestPJavaIf {
                 stack.push(i);
             }
             if (cad.charAt(i) == ')') {
-                try {
+                if(!stack.isEmpty()) {
                     System.out.println(stack.pop() + ", " + i);
-                } catch (Exception ex) {
+                } else {
                     System.out.println("falta abrir el parentesis que se cierra en " + i);
                     error = true;                    
                 }
@@ -40,9 +40,9 @@ public class TestPJavaIf {
             System.out.println("Falta un ) para cerrar el parentesis abierto en " + stack.pop());
             error = true;
         } 
-        /*if(!error) {
+        if(!error) {
             System.out.println("Match!");
-        }*/
+        }
 
     }
 

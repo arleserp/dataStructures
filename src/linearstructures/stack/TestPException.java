@@ -28,9 +28,9 @@ public class TestPException {
                 stack.push(i);
             }
             if (cad.charAt(i) == ')') {
-                if(!stack.isEmpty()) {
+                try {
                     System.out.println(stack.pop() + ", " + i);
-                } else {
+                } catch (Exception ex) {
                     System.out.println("falta abrir el parentesis que se cierra en " + i);
                     error = true;                    
                 }
@@ -40,9 +40,9 @@ public class TestPException {
             System.out.println("Falta un ) para cerrar el parentesis abierto en " + stack.pop());
             error = true;
         } 
-        if(!error) {
+        /*if(!error) {
             System.out.println("Match!");
-        }
+        }*/
 
     }
 
