@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class Fibonacci {
 
-    private static double fibonacci(double n) {
+    private static long fibonacci(long n) {
         if (n == 0) {
             return 0;
         }
