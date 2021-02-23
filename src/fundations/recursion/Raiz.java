@@ -28,7 +28,7 @@ public class Raiz {
     }
 
     public static void main(String[] args) {
-        System.out.println(raiz(2.0));
+        System.out.println(raiz(3.0));
     }
 }
 
