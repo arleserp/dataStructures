@@ -22,5 +22,5 @@ public class Ruta {
     public String toString() {
         return "Ruta{" + "origen=" + origen + ", destino=" + destino + '}';
     }
-            
+           
 }

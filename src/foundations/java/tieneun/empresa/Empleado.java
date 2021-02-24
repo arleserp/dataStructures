@@ -22,8 +22,7 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "nombre: " + nombre + "\ncodigo:" + codigo + "\nsalario:" + salario;
+        return "nombre: " + nombre + "\ncodigo:" + codigo + 
+                "\nsalario:" + salario;
     }
-    
-    
 }
