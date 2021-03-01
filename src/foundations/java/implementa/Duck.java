@@ -9,30 +9,25 @@ package foundations.java.implementa;
  *
  * @author Arles
  */
-public class Duck implements ShapeInterface, SayHelloInterface {
+public class Duck {
+    private String name;
+    private FlyBehavior flybehavior;
 
-    @Override
-    public double getArea() {
-        return 50;
+    public Duck(String name, FlyBehavior flybehavior) {
+        this.name = name;
+        this.flybehavior = flybehavior;
     }
 
-    @Override
-    public double getVolume() {
-        return 100.0;
-    }
-
-    @Override
     public String getName() {
-        return "Patito";
+        return name;
     }
 
-    @Override
-    public String toString() {
-        return "Patito";
+    public void setFlybehavior(FlyBehavior flybehavior) {
+        this.flybehavior = flybehavior;
     }
-
-    @Override
-    public void sayHello() {
-        System.out.println("Quack Quack");
-    }    
+            
+    public void fly(){
+        flybehavior.fly();
+    }
+        
 }
