@@ -9,12 +9,11 @@ package foundations.java.implementa;
  *
  * @author Arles
  */
-public interface ShapeInterface {
+public class NoFly implements FlyBehavior{
+
+    @Override
+    public void fly() {
+        System.out.println("I don´t fly :(");   
+    }
     
-    public double getArea();
-
-    public double getVolume();
-
-    public String getName();
-
 }

@@ -9,33 +9,31 @@ package foundations.java.implementa;
  *
  * @author Arles
  */
-import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 public class InterfaceTest {
 
     public static void main(String args[]) {
-        DecimalFormat twoDigits = new DecimalFormat("0.00");
-        ShapeInterface a[] = {
-            new PointXYImpl(7, 11),
-            new PointXYImpl(3, 5),
-            new PointXYImpl(7, 4),
-            new Duck(),
-        };
-                  
-        for(int i = 0; i < a.length; i++) {
-            System.out.println(
-                    a[i].getName() + ": "
-                    + a[i].toString() + "\nArea="
-                    + twoDigits.format(a[i].getArea())
-                    + "\nVolume = "
-                    + twoDigits.format(a[i].getVolume()));
-            System.out.println();
+        Duck gomito = new Duck("Pato de Goma", new NoFly());
+        Duck silvestre = new Duck("Pato silvestre", new LongFly());
+        Duck parque = new Duck("Pato de parque", new ShortFly());
+        
+        ArrayList<Duck> paticos = new ArrayList<>();
+        paticos.add(gomito);
+        paticos.add(silvestre);
+        paticos.add(parque);
+        for (Duck p: paticos) {
+            System.out.print(p.getName() + " - ");
+            p.fly();
         }
-        
-        System.out.println("saluda el patico: ");
-        SayHelloInterface elMismoPato = (SayHelloInterface)a[3];        
-        (elMismoPato).sayHello();
-        
+        //se pueden intercambiar los algoritmos
+        System.out.println("Ahora silvestre no vuela... pero el de goma si");
+        silvestre.setFlybehavior(new NoFly());
+        gomito.setFlybehavior(new LongFly());
+        for (Duck p: paticos) {
+            System.out.print(p.getName() + "-");
+            p.fly();
+        }
     }
 }
 

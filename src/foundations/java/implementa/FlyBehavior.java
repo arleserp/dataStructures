@@ -9,7 +9,6 @@ package foundations.java.implementa;
  *
  * @author Arles
  */
-public interface SayHelloInterface {
-   
-    public void sayHello();
+interface FlyBehavior {
+    void fly();
 }
