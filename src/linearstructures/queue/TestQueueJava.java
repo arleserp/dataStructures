@@ -7,7 +7,6 @@ package linearstructures.queue;
 
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Queue;
 /**
  *
  * @author usuario
@@ -24,13 +23,12 @@ public class TestQueueJava {
         System.out.println("First Element:" + q.getFirst());
         System.out.println("Last Element:" + q.getLast());
         
-        int rotaciones = 3;
+        int rotaciones = 4;
         for (int i = 0; i < rotaciones; i++) {
             q.add(q.remove()); //operacion mágica :v
+            System.out.println(q);
         }
-        
-        System.out.println(q);
-        
+                      
         //Ciclo tradicional
         while(!q.isEmpty()){
             System.out.println("atiende a " + q.remove());
