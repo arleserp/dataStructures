@@ -26,7 +26,7 @@ public class ArrayLinearList implements LinearList {
         if (initialCapacity < 1) {
             throw new IllegalArgumentException("initialCapacity must be >= 1");
         }
-        element = new Object[initialCapacity];
+        element = new Object[initialCapacity];        
     }
 
     /**
@@ -114,7 +114,7 @@ public class ArrayLinearList implements LinearList {
      * @throws IndexOutOfBoundsException when index is not between 0 and size
      */
     @Override
-    public void add(int index, Object theElement) {
+    public void add(int index, Object theElement) { //O(size)
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("index = " + index + " size = " + size);
         }
@@ -134,7 +134,7 @@ public class ArrayLinearList implements LinearList {
      * Añade un elemento al final de la lista
      * @param theElement 
      */
-    public void add(Object theElement) {
+    public void add(Object theElement) { 
         add(size, theElement);        
     }
     

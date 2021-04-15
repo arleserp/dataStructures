@@ -44,7 +44,7 @@ public class Chain implements LinearList {
     }
 
     @Override
-    public Object get(int index) {
+    public Object get(int index) { //O(size)
         checkIndex(index);
         ChainNode currentNode = firstNode;
         for (int i = 0; i < index; i++) {
