@@ -24,7 +24,8 @@ public class Chain implements LinearList {
         this(0);
     }
 
-    public boolean isEmpty() {
+    @Override
+    public boolean isEmpty() { //O(1)
         return size == 0;
     }
 
@@ -54,7 +55,7 @@ public class Chain implements LinearList {
     }
 
     @Override
-    public int indexOf(Object theElement) {
+    public int indexOf(Object theElement) { //O(size)
         ChainNode currentNode = firstNode;
         int index = 0;
         while (currentNode != null
@@ -109,8 +110,12 @@ public class Chain implements LinearList {
         size++;
     }
 
+    public void add(Object theElement) {
+        this.add(size, theElement);
+    }
+
     @Override
-    public String toString() {
+    public String toString() { //O(size)
         StringBuffer s = new StringBuffer("[");
         // put elements into the buffer
         for (ChainNode currentNode = firstNode; currentNode != null; currentNode = currentNode.next) {
@@ -136,6 +141,15 @@ public class Chain implements LinearList {
         s.append("]");
         // create equivalent String
         return new String(s);
+    }
+
+    public static void main(String[] args) {
+        Chain x = new Chain();
+        x.add(5);
+        x.add(7);
+        x.add(8);
+        x.add(9);
+        System.out.println(x);
     }
 
 }

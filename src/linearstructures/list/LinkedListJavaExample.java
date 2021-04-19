@@ -5,21 +5,23 @@
  */
 package linearstructures.list;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  *
  * @author Arles
  */
-public class TestChain {
+public class LinkedListJavaExample {
 
     public static void main(String[] args) {
-        Chain x = new Chain();
+        List x = new LinkedList();
         System.out.println("Initial size is " + x.size());
         if (x.isEmpty()) {
-            System.out.println("The list is empty");
+            System.out.println("List is empty");
         } else {
             System.out.println("The list is not empty");
         }
-        System.out.println("x:" + x);
         x.add(0, new Integer(2));
         x.add(1, new Integer(6));
         x.add(0, new Integer(1));
@@ -45,9 +47,9 @@ public class TestChain {
         System.out.println(x.remove(2) + " removed");
         System.out.println("The list is " + x);
         if (x.isEmpty()) {
-            System.out.println("The list is empty");
+            System.out.println("List is empty");
         } else {
-            System.out.println("The list is not empty");
+            System.out.println("List is not empty");
         }
         System.out.println("List size is " + x.size());
     }

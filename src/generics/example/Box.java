@@ -25,9 +25,10 @@ public class Box {
         Box b = new Box();
         b.set("Hola");
         System.out.println(b.get().toString().toUpperCase());
+        //System.out.println(b.get().toString().toUpperCase());
     
         Box c = new Box();
-        c.set(2.3);
+        c.set(3.2);
         double res = (double)c.get() + 1.0;
         System.out.println(res);
         
@@ -45,6 +46,6 @@ class NotengoIdea{
     }
     
     public void responder(){
-        System.out.println("No tengo idea");
+        System.out.println("No tengo idea de " + algo);
     }
 }

@@ -41,7 +41,7 @@ public class Pair {
     
     
     public static void main(String[] args) {
-        Pair p = new Pair("Hola", 2.5);
+        Pair p = new Pair("HOLA", 2.5);
         System.out.println("key in lowercase: "+ ((String)p.getKey()).toLowerCase());
         System.out.println("Value multiplied by Pi: "+ ((Double)p.getValue())*Math.PI);
         
