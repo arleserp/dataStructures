@@ -16,8 +16,8 @@ import java.util.Stack;
 public class TestPIf {
 
     public static void main(String[] args) {
-        Stack stack = new Stack();
-                
+        Stack<Integer> stack = new Stack<>();
+        
         //DerivedLinkedStack stack = new DerivedLinkedStack();
         Scanner sc = new Scanner(System.in);
         String cad = sc.nextLine();

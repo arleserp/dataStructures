@@ -5,13 +5,18 @@
  */
 package linearstructures.queue;
 
-import utilities.MyInputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
 
 /**
  *
  * @author Arles
  */
 public class ImageComponents {
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     // top-level nested class
     private static class Position {
@@ -37,19 +42,19 @@ public class ImageComponents {
     private static int size;
 
     // methods
-    private static void inputImage() {
+    private static void inputImage() throws IOException {
         // define the input stream to be the standard
-        // input stream
-        MyInputStream keyboard = new MyInputStream();
+        // input stream        
         System.out.println("Enter image size");
-        size = keyboard.readInteger();
+        size = Integer.parseInt(br.readLine());
         // create and input the pixel array
         pixel = new int[size + 2][size + 2];
         System.out.print("Enter the pixel array ");
         System.out.println("in row-major order");
         for (int i = 1; i <= size; i++) {
+            int[] row = Arrays.stream(br.readLine().split(" ")).mapToInt(x -> Integer.parseInt(x)).toArray();            
             for (int j = 1; j <= size; j++) {
-                pixel[i][j] = keyboard.readInteger();
+                pixel[i][j] = row[j-1];
             }
         }
     }
@@ -106,7 +111,7 @@ public class ImageComponents {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         inputImage();
         labelComponents();
         outputImage();

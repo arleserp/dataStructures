@@ -5,14 +5,16 @@
  */
 package linearstructures.queue;
 
-import utilities.MyInputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
 
 /**
  *
  * @author arlese.rodriguezp
  */
 public class WireRouter {
-
     // data members
     private static int[][] grid;
     private static int size;
@@ -20,6 +22,7 @@ public class WireRouter {
     private static ArrayQueue q;
     private static Position start, finish;
     private static Position[] path;// the shortest path
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     private static class Position {
 
@@ -39,21 +42,23 @@ public class WireRouter {
         }
     }
 
-    private static void inputData() {
-        MyInputStream keyboard = new MyInputStream();
+    private static void inputData() throws IOException {
         System.out.println("Enter grid size");
-        size = keyboard.readInteger();
+        size = Integer.parseInt(br.readLine());
         System.out.println("Enter the start position");
-        start = new Position(keyboard.readInteger(), keyboard.readInteger());
+        int[] positions = Arrays.stream(br.readLine().split(" ")).mapToInt(x->Integer.parseInt(x)).toArray();
+        start = new Position(positions[0], positions[1]);
         System.out.println("Enter the finish position");
-        finish = new Position(keyboard.readInteger(), keyboard.readInteger());
+        positions = Arrays.stream(br.readLine().split(" ")).mapToInt(x->Integer.parseInt(x)).toArray();
+        finish = new Position(positions[0], positions[1]);
         // create and input the wiring grid array
         grid = new int[size + 2][size + 2];
         System.out.print("Enter the wiring grid ");
         System.out.println("in row-major order");
         for (int i = 1; i <= size; i++) {
+            int[] row = Arrays.stream(br.readLine().split(" ")).mapToInt(x->Integer.parseInt(x)).toArray();
             for (int j = 1; j <= size; j++) {
-                grid[i][j] = keyboard.readInteger();
+                grid[i][j] = row[j-1];
             }
         }
     }
@@ -130,7 +135,7 @@ public class WireRouter {
         return true;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         inputData();
         if (findPath()) {
             outputPath();
