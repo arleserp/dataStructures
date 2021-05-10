@@ -11,11 +11,12 @@ package linearstructures.queue;
  */
 public class TestArrayQueue {
     public static void main(String[] args) {
-        ArrayQueue q = new ArrayQueue(3);
+        ArrayQueue q = new ArrayQueue();
         q.put(new Integer(1));
         q.put(new Integer(2));
         q.put(new Integer(3));
         q.put(new Integer(4));
+        
         while (!q.isEmpty()) {
             System.out.println("Rear element is "
                     + q.getRearElement());

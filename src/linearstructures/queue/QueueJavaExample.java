@@ -25,7 +25,7 @@ public class QueueJavaExample {
         
         while (!q.isEmpty()) {
             System.out.println("Rear element is "
-                    + q.getLast());
+                    + q.getLast()); //
             System.out.println("Front element is "
                     + q.getFirst());
             System.out.println("Removed the element "
