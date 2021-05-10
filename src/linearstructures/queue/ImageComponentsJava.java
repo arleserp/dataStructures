@@ -86,7 +86,9 @@ public class ImageComponentsJava {
                 if (pixel[r][c] == 1) { // new component
                     pixel[r][c] = ++id; // get next id
                     Position here = new Position(r, c);
-                    do { // find rest of component
+                    q.add(here);
+                    while(!q.isEmpty()) { // find rest of component
+                        here = (Position) q.remove();
                         for (int i = 0; i < numOfNbrs; i++) { // check all neighbors of here
                             nbr.row = here.row + offset[i].row;
                             nbr.col = here.col + offset[i].col;
@@ -94,11 +96,9 @@ public class ImageComponentsJava {
                                 pixel[nbr.row][nbr.col] = id;
                                 q.add(new Position(nbr.row, nbr.col));
                             }
-                        }
-                        // any unexplored pixels in component?
-                        here = (Position) q.poll();                        
-                    } while (here != null);
-                } // end of if, for c, and for r
+                        }                        
+                    } 
+                } 
             }
         }
     }
@@ -128,7 +128,7 @@ Input:
 0 0 1 1 0 0 0
 0 0 0 0 1 0 0
 0 0 0 1 1 0 0
-1 0 0 0 1 0 0
-1 1 1 0 0 0 0
-1 1 1 0 0 0 0
+1 0 0 0 1 0 1
+1 1 1 0 0 0 1
+1 1 1 0 0 1 1
 */
