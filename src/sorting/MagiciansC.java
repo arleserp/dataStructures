@@ -61,12 +61,12 @@ public class MagiciansC implements Comparable<MagiciansC> {
 
     public static void main(String[] args) {
         ArrayList<MagiciansC> magicians = new ArrayList<>();
-        magicians.add(new MagiciansC("Gandalf", 150));
-        magicians.add(new MagiciansC("McGonagall", 150));
-        magicians.add(new MagiciansC("Dumbledore", 150));
-        magicians.add(new MagiciansC("Lorgia", 68));
+        magicians.add(new MagiciansC("Gandalf", 2019));
+        magicians.add(new MagiciansC("Dumbledore", 116));
+        magicians.add(new MagiciansC("Lorgia", 65));
         magicians.add(new MagiciansC("Houdini", 52));
-        magicians.add(new MagiciansC("Harry Potter", 22));
+        magicians.add(new MagiciansC("McGonagall", 86));
+
 
         System.out.println("before sort: " + magicians);
         //El ordenamiento aquí funciona porque Magician implementa Comparable

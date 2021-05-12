@@ -30,10 +30,10 @@ public class MagiciansL {
     public static void main(String[] args) {
         ArrayList<MagiciansL> magicians = new ArrayList<>();
         magicians.add(new MagiciansL("Gandalf", 2019));
-        magicians.add(new MagiciansL("Dumbledore", 150));
-        magicians.add(new MagiciansL("Lorgia", 68));
+        magicians.add(new MagiciansL("Dumbledore", 116));
+        magicians.add(new MagiciansL("Lorgia", 65));
         magicians.add(new MagiciansL("Houdini", 52));
-        magicians.add(new MagiciansL("McGonagall", 84));
+        magicians.add(new MagiciansL("McGonagall", 86));
 
         System.out.println("before sort: " + magicians);        
 
