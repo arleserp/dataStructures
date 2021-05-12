@@ -29,10 +29,10 @@ public class SelectionSort {
         return maxPos;
     }
 
-    private static void swap(Comparable[] a, int j, int size) {
-        Comparable aux = a[j];
-        a[j] = a[size];
-        a[size] = aux;
+    private static void swap(Comparable[] a, int i, int j) {
+        Comparable aux = a[i];
+        a[i] = a[j];
+        a[j] = aux;
     }
 
     public static void main(String[] args) {
