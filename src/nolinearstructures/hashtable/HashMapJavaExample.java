@@ -35,7 +35,7 @@ public class HashMapJavaExample {
         System.out.println("Get 106:" + hm.get(106));
         System.out.println("Contiene 108?" + hm.containsKey(108));
         System.out.println("lista llaves: " + hm.keySet());
-                
+               
         //key: String, valores: ArrayList
         HashMap<String, ArrayList> frasesGente = new HashMap<>();
         ArrayList<String> frasesArles = new ArrayList<>();
@@ -44,7 +44,7 @@ public class HashMapJavaExample {
         frasesGente.put("Arles", frasesArles);
                         
         System.out.println("Frases de Arles antes:" + frasesGente.get("Arles"));
-        frasesGente.get("Arles").add("Nos quedan dos minutos para terminar la clase");
+        frasesGente.get("Arles").add("Nos quedan doce minutos para terminar la clase");
         System.out.println("Frases de Arles despues: " + frasesGente.get("Arles"));
         
         ArrayList<String> frasesDaniel = new ArrayList<>();

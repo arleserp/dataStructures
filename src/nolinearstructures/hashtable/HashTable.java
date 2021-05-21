@@ -122,12 +122,15 @@ public class HashTable {
      */
     public static void main(String[] args) {
         HashTable h = new HashTable(11);
-        h.put(new Integer(80), new Integer(80));
-        h.put(new Integer(40), new Integer(40));
-        h.put(new Integer(65), new Integer(65));
+        h.put(new Integer(80), "Hermione");
 
-        h.put(new Integer(14), new Integer(14));
-        h.output();/*
+        System.out.println("obteniendo elemento asociado a llave 80: " + h.get(80));
+        h.put(new Integer(40), "Ron Wisley");
+        h.put(new Integer(65), "Harry Potter");
+        h.put(new Integer(14), "Luna Lovegood");
+        h.output();
+        System.out.println("El codigo 14 es: " + h.get(14));
+        /*
         System.out.println();
         h.put(new Integer(58), new Integer(58));
         h.put(new Integer(24), new Integer(24));
@@ -152,9 +155,9 @@ public class HashTable {
 
         ArrayList<String> frases = new ArrayList<>();
         frases.add("Hogwarts es nuestro lugar seguro");
-        frases.add("corred insensatos");       
+        frases.add("corred insensatos");
         MagiciansC mago = new MagiciansC("Dumbledore", 2019);
-        System.out.println("mago:" + mago.hashCode());        
+        System.out.println("mago:" + mago.hashCode());
         h.put(mago, frases);
         h.output();
     }

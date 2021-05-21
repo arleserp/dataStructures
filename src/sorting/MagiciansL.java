@@ -29,11 +29,11 @@ public class MagiciansL {
 
     public static void main(String[] args) {
         ArrayList<MagiciansL> magicians = new ArrayList<>();
-        magicians.add(new MagiciansL("Gandalf", 2019));
+        magicians.add(new MagiciansL("Gandalf", 65));
         magicians.add(new MagiciansL("Dumbledore", 116));
         magicians.add(new MagiciansL("Lorgia", 65));
         magicians.add(new MagiciansL("Houdini", 52));
-        magicians.add(new MagiciansL("McGonagall", 86));
+        magicians.add(new MagiciansL("McGonagall", 65));
 
         System.out.println("before sort: " + magicians);        
 
@@ -44,8 +44,13 @@ public class MagiciansL {
         System.out.println("sorted ascending by name: " + magicians);
 
         //Expresión lambda para ordenar un arreglo comparando los magos por edad descendente.
-        Collections.sort(magicians, (o1, o2)->{
-            return o1.age.compareTo(o2.age)*-1;
+        //si dos edades son iguales compara por nombre.
+        Collections.sort(magicians, (o1, o2)->{            
+            int res = (o1.age - o2.age)*-1;
+            if(res == 0){
+                return o1.name.compareTo(o2.name);
+            }
+            return res;
         });
         System.out.println("sorted descending by age:" + magicians);
         
