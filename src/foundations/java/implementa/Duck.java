@@ -29,5 +29,10 @@ public class Duck {
     public void fly(){
         flybehavior.fly();
     }
+
+    public FlyBehavior getFlybehavior() {
+        return flybehavior;
+    }
+        
         
 }
