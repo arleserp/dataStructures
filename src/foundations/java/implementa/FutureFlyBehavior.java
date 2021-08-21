@@ -9,7 +9,7 @@ package foundations.java.implementa;
  *
  * @author Arles
  */
-public class FutureDuck implements FlyBehavior, DefaultTeleport {
+public class FutureFlyBehavior implements FlyBehavior, DefaultTeleport {
 
     @Override
     public void fly() {

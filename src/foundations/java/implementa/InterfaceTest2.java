@@ -17,7 +17,7 @@ public class InterfaceTest2 {
         Duck gomito = new Duck("Pato de Goma", new NoFly());
         Duck silvestre = new Duck("Pato silvestre", new LongFly());
         Duck parque = new Duck("Pato de parque", new ShortFly());
-        Duck future = new Duck("Pato avanzado", new FutureDuck());
+        Duck future = new Duck("Pato avanzado", new FutureFlyBehavior());
         
         ArrayList<Duck> paticos = new ArrayList<>();
         paticos.add(gomito);

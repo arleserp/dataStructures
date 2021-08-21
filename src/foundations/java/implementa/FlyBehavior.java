@@ -10,5 +10,6 @@ package foundations.java.implementa;
  * @author Arles
  */
 interface FlyBehavior {
-    void fly();
+    void fly();            
+    
 }

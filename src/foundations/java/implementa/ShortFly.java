@@ -10,10 +10,8 @@ package foundations.java.implementa;
  * @author Arles
  */
 public class ShortFly implements FlyBehavior{
-
     @Override
     public void fly() {
         System.out.println("Flying a short distance!");   
-    }
-    
+    }    
 }
