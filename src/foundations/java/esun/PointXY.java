@@ -43,10 +43,7 @@ public class PointXY extends Shape {
         return "[" + getX() + ", " + getY() + "]";
     }
 
-    @Override
-    public String getName() {
-        return "Point";
-    }
+
     
     public static void main(String[] args) {
         PointXY k = new PointXY(2, 3);
@@ -54,6 +51,11 @@ public class PointXY extends Shape {
         System.out.println(k.getArea());
         System.out.println(k.getVolume());
         System.out.println(k);
+    }
+
+    @Override
+    public String getName() {
+        return "Point";
     }
 }
 

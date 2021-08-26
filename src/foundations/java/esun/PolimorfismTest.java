@@ -54,7 +54,7 @@ public class PolimorfismTest {
         }
         System.out.println("-----for each ArrayList--------");
         ArrayList<Shape> figurasArrayList = new ArrayList<>();
-        figurasArrayList.add(p);
+        figurasArrayList.add(c);
         figurasArrayList.add(cil);
         figurasArrayList.add(p);
         figurasArrayList.add(p);

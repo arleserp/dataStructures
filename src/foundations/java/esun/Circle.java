@@ -9,7 +9,7 @@ package foundations.java.esun;
  *
  * @author Arles
  */
-public class Circle extends PointXY {
+public class Circle extends PointXY{
 
     private double radius;
 
