@@ -116,7 +116,7 @@ public class Chain implements LinearList {
 
     @Override
     public String toString() { //O(size)
-        StringBuffer s = new StringBuffer("[");
+        StringBuilder s = new StringBuilder("[");
         // put elements into the buffer
         for (ChainNode currentNode = firstNode; currentNode != null; currentNode = currentNode.next) {
             if (currentNode.element == null) {
@@ -140,7 +140,7 @@ public class Chain implements LinearList {
         }
         s.append("]");
         // create equivalent String
-        return new String(s);
+        return s.toString();
     }
 
     public static void main(String[] args) {

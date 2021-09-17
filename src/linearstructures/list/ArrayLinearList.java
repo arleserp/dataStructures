@@ -66,6 +66,7 @@ public class ArrayLinearList implements LinearList {
     public Object get(int index) {
         checkIndex(index);
         return element[index]; //O(1)
+        
     }
 
     /**
@@ -144,7 +145,7 @@ public class ArrayLinearList implements LinearList {
      */
     @Override
     public String toString() {
-        StringBuffer s = new StringBuffer("[");
+        StringBuilder s = new StringBuilder("[");
         // put elements into the buffer
         for (int i = 0; i < size; i++) {
             if (element[i] == null) {
@@ -158,7 +159,7 @@ public class ArrayLinearList implements LinearList {
         }
         s.append("]");
         // create equivalent String
-        return new String(s);
+        return s.toString();
     }
 
     public static void main(String[] args) {

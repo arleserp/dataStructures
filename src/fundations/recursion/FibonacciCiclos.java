@@ -13,16 +13,16 @@ import java.util.Scanner;
  */
 public class FibonacciCiclos {
 
-    private static double fibonacci(double n) {
-        double fibo = 1;
+    private static long fibonacci(long n) {
+        long fibo = 1;
         if (n == 0) {
             return 0;
         }
         if (n == 1) {
             return 1;
         }
-        double antant = 0;
-        double ant = 1;
+        long antant = 0;
+        long ant = 1;
         for (int i = 2; i <= n; i++) {
             fibo = ant + antant;
             antant = ant;
