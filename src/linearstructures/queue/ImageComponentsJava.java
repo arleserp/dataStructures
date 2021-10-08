@@ -5,12 +5,11 @@
  */
 package linearstructures.queue;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Scanner;
+import static linearstructures.queue.WireRouter.br;
 
 /**
  *
@@ -18,26 +17,8 @@ import java.util.LinkedList;
  */
 public class ImageComponentsJava {
 
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-    // top-level nested class
-    private static class Position {
-
-        // data members
-        private int row; // row number of the position
-        private int col; // column number of the position
-        // constructor
-
-        private Position(int theRow, int theCol) {
-            row = theRow;
-            col = theCol;
-        }
-
-        // convert to string suitable for output
-        public String toString() {
-            return new String(row + " " + col);
-        }
-    }
+    //static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));     //fast read
+    static Scanner sc = new Scanner(System.in);
 
     // data members
     private static int[][] pixel;
@@ -48,15 +29,19 @@ public class ImageComponentsJava {
         // define the input stream to be the standard
         // input stream        
         System.out.println("Enter image size");
-        size = Integer.parseInt(br.readLine());
+        size = sc.nextInt(); //Integer.parseInt(br.readLine());
         // create and input the pixel array
         pixel = new int[size + 2][size + 2];
         System.out.print("Enter the pixel array ");
         System.out.println("in row-major order");
         for (int i = 1; i <= size; i++) {
-            int[] row = Arrays.stream(br.readLine().split(" ")).mapToInt(x -> Integer.parseInt(x)).toArray();
+            /* //uncoment for fast reading using BufferedReader
+            int[] row = Arrays.stream(br.readLine().split(" ")).mapToInt(x -> Integer.parseInt(x)).toArray(); //fast read
             for (int j = 1; j <= size; j++) {
                 pixel[i][j] = row[j - 1];
+            }*/
+            for (int j = 1; j <= size; j++) {
+                pixel[i][j] = sc.nextInt();
             }
         }
     }
@@ -87,7 +72,7 @@ public class ImageComponentsJava {
                     pixel[r][c] = ++id; // get next id
                     Position here = new Position(r, c);
                     q.add(here);
-                    while(!q.isEmpty()) { // find rest of component
+                    while (!q.isEmpty()) { // find rest of component
                         here = (Position) q.remove();
                         for (int i = 0; i < numOfNbrs; i++) { // check all neighbors of here
                             nbr.row = here.row + offset[i].row;
@@ -96,9 +81,9 @@ public class ImageComponentsJava {
                                 pixel[nbr.row][nbr.col] = id;
                                 q.add(new Position(nbr.row, nbr.col));
                             }
-                        }                        
-                    } 
-                } 
+                        }
+                    }
+                }
             }
         }
     }
@@ -120,7 +105,24 @@ public class ImageComponentsJava {
     }
 }
 
+class Position {
 
+    // data members
+    int row; // row number of the position
+    int col; // column number of the position
+    // constructor
+
+    public Position(int theRow, int theCol) {
+        row = theRow;
+        col = theCol;
+    }
+
+    // convert to string suitable for output
+    @Override
+    public String toString() {
+        return row + " " + col;
+    }
+}
 /*
 Input: 
 7
@@ -131,4 +133,4 @@ Input:
 1 0 0 0 1 0 1
 1 1 1 0 0 0 1
 1 1 1 0 0 1 1
-*/
+ */
