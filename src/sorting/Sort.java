@@ -17,7 +17,7 @@ import java.util.Comparator;
 public class Sort {
 
     public static void main(String[] args) {
-        int numeros[] = {4, 3, 2, 4, 2, 1, 3, 123, 13, 123, 123, 235, 456, 34, 234};
+        /*int numeros[] = {4, 3, 2, 4, 2, 1, 3, 123, 13, 123, 123, 235, 456, 34, 234};
 
         for (int i = 0; i < numeros.length; i++) {
             System.out.print(numeros[i] + " ");
@@ -28,38 +28,41 @@ public class Sort {
         for (int i = 0; i < numeros.length; i++) {
             System.out.print(numeros[i] + " ");
         }
-        System.out.println("");
+        System.out.println("");*/
 
         ArrayList<Estudiantes> estudiantes = new ArrayList<>();
         estudiantes.add(new Estudiantes("stiven", 22, 2.2f, "1", false));
         estudiantes.add(new Estudiantes("arles", 22, 4.2f, "4", true));
-        estudiantes.add(new Estudiantes("daniel", 15, 5.0f, "5", false));
+        estudiantes.add(new Estudiantes("daniela", 15, 5.0f, "5", false));
         estudiantes.add(new Estudiantes("daniela", 15, 5.0f, "3", true));
         estudiantes.add(new Estudiantes("maria", 15, 3.5f, "2", true));
 
         for (Estudiantes estudiante : estudiantes) {
             System.out.println(estudiante);
         }
-        System.out.println("ordenada por edad y nombre");
+        
+        //System.out.println("ordenada por edad y nombre");
         Collections.sort(estudiantes);
+        System.out.println("-----después de ordenar----");
+        
         for (Estudiantes estudiante : estudiantes) {
             System.out.println(estudiante);
         }
         System.out.println("orden por codigo");
-        Collections.sort(estudiantes, (t, t1) -> {
+        Collections.sort(estudiantes, (th, otro) -> {
             int compare = 0;
-            compare = t.codigo.compareTo(t1.codigo);
+            compare = th.codigo.compareTo(otro.codigo);
             return compare;
         });
         for (Estudiantes estudiante : estudiantes) {
             System.out.println(estudiante);
         }
-        System.out.println("orden por promedio, edad, codigo, nombre");
+        System.out.println("orden por promedio, edad, nombre, codigo");
         Collections.sort(estudiantes, (estudiante1, estudiante2) -> {
             int compare = 0;
             //equivalentes
             compare = (int) (estudiante1.promedio.compareTo(estudiante2.promedio)) * -1;
-            compare = (int) (estudiante1.promedio - estudiante2.promedio) * -1;
+            
             if (compare == 0) {
                 compare = estudiante1.edad - estudiante2.edad;
                 if (compare == 0) {
@@ -102,24 +105,11 @@ class Estudiantes implements Comparable<Estudiantes> {
 
     @Override
     public int compareTo(Estudiantes otro) {
-        int compare = 0;
-        if (this.estaActivo && otro.estaActivo) {
-            compare = 0;
-        }
-        if (this.estaActivo && !otro.estaActivo) {
-            compare = 1;
-        }
-        if (!this.estaActivo && otro.estaActivo) {
-            compare = -1;
-        }
-//        compare = (this.edad - otro.edad) * -1;
-//        compare = otro.edad - this.edad;
-//        if (compare == 0) {
-//            compare = this.nombre.compareTo(otro.nombre);
-//        }
+                   int compare = 0;
+            compare = this.codigo.compareTo(otro.codigo);
+            return compare;
         //compare 0 son iguales
         //compare - this es menor que otro
         //compare + this es mayor que otro
-        return compare;
     }
 }
