@@ -5,6 +5,8 @@
  */
 package nolinearstructures.tree;
 
+import java.util.function.Consumer;
+
 /**
  *
  * @author arlese.rodriguezp
@@ -36,5 +38,13 @@ public class BinaryTreeNode {
     @Override
     public String toString() {
         return element.toString();
+    }
+
+    public void printNode() {
+        System.out.print(this.toString() + " ");
+    }
+
+    public void addOne(ContNodos counter) {
+        counter.addOne();
     }
 }
