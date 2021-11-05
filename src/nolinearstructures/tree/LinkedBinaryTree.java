@@ -3,7 +3,7 @@ package nolinearstructures.tree;
 import java.util.function.Consumer;
 import linearstructures.queue.ArrayQueue;
 
-public class LinkedBinaryTreeF implements BinaryTreeF {
+public class LinkedBinaryTree implements BinaryTree {
     // instance data member
     BinaryTreeNode root;  // root node
     ContNodos counter = new ContNodos();// counter of nodes
@@ -32,8 +32,8 @@ public class LinkedBinaryTreeF implements BinaryTreeF {
     @Override
     public void makeTree(Object root, Object left, Object right) {
         this.root = new BinaryTreeNode(root,
-                ((LinkedBinaryTreeF) left).root,
-                ((LinkedBinaryTreeF) right).root);
+                ((LinkedBinaryTree) left).root,
+                ((LinkedBinaryTree) right).root);
     }
 
     /**
@@ -43,16 +43,16 @@ public class LinkedBinaryTreeF implements BinaryTreeF {
      * @return removed subtree
      */
     @Override
-    public BinaryTreeF removeLeftSubtree() {
+    public BinaryTree removeLeftSubtree() {
         if (root == null) {
             throw new IllegalArgumentException("tree is empty");
         }
 
         // detach left subtree and save in leftSubtree
-        LinkedBinaryTreeF leftSubtree = new LinkedBinaryTreeF();
+        LinkedBinaryTree leftSubtree = new LinkedBinaryTree();
         leftSubtree.root = root.leftChild;
         root.leftChild = null;
-        return (BinaryTreeF) leftSubtree;
+        return (BinaryTree) leftSubtree;
     }
 
     /**
@@ -62,17 +62,17 @@ public class LinkedBinaryTreeF implements BinaryTreeF {
      * @return removed subtree
      */
     @Override
-    public BinaryTreeF removeRightSubtree() {
+    public BinaryTree removeRightSubtree() {
         if (root == null) {
             throw new IllegalArgumentException("tree is empty");
         }
 
         // detach right subtree and save in rightSubtree
-        LinkedBinaryTreeF rightSubtree = new LinkedBinaryTreeF();
+        LinkedBinaryTree rightSubtree = new LinkedBinaryTree();
         rightSubtree.root = root.rightChild;
         root.rightChild = null;
 
-        return (BinaryTreeF) rightSubtree;
+        return (BinaryTree) rightSubtree;
     }
 
     /**
@@ -228,11 +228,11 @@ public class LinkedBinaryTreeF implements BinaryTreeF {
      * test program
      */
     public static void main(String[] args) {
-        LinkedBinaryTreeF a = new LinkedBinaryTreeF();
-        LinkedBinaryTreeF x = new LinkedBinaryTreeF(),
-                y = new LinkedBinaryTreeF(),
-                z = new LinkedBinaryTreeF(),                
-                w = new LinkedBinaryTreeF();
+        LinkedBinaryTree a = new LinkedBinaryTree();
+        LinkedBinaryTree x = new LinkedBinaryTree();
+        LinkedBinaryTree y = new LinkedBinaryTree(),
+                z = new LinkedBinaryTree(),                
+                w = new LinkedBinaryTree();
         w.makeTree(new Integer(1), a, a);
         z.makeTree(new Integer(2), a, a);
         x.makeTree(new Integer(3), w, z);

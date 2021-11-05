@@ -11,7 +11,7 @@ import java.util.function.Consumer;
  *
  * @author arlese.rodriguezp
  */
-public interface BinaryTreeF {
+public interface BinaryTree {
 
     public boolean isEmpty();
 
@@ -19,9 +19,9 @@ public interface BinaryTreeF {
 
     public void makeTree(Object root, Object left, Object right);
 
-    public BinaryTreeF removeLeftSubtree();
+    public BinaryTree removeLeftSubtree();
 
-    public BinaryTreeF removeRightSubtree();
+    public BinaryTree removeRightSubtree();
 
     public void preOrder(Consumer<BinaryTreeNode> visit);
 
