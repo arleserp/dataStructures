@@ -14,10 +14,10 @@ import java.util.function.Consumer;
  * one operation of Empleado taking advantage of recorrer
  * @author Arles
  */
-public class ConsumerExample {
+public class NominaConsumerExample {
     ArrayList<Empleado> empleados; 
 
-    public ConsumerExample() {
+    public NominaConsumerExample() {
         this.empleados = new ArrayList<>();        
     }
     
@@ -40,11 +40,10 @@ public class ConsumerExample {
         }
         return sal;
     }
-    
-    
+        
     
     public static void main(String[] args) {
-        ConsumerExample c = new ConsumerExample();
+        NominaConsumerExample c = new NominaConsumerExample();
         c.addEmpleado("Berlin", 5000000);
         c.addEmpleado("Rio", 1000000);
         c.addEmpleado("Nairobi", 6000000);
