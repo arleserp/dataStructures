@@ -1,15 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
- /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package tallerlistas;
-
 import java.util.Scanner;
 
 /**
@@ -62,7 +50,7 @@ public class TestChainV2 {
                 int to = Integer.parseInt(sc.nextLine());
                 System.out.println("El ultimo indice de " + to + " es: " + x.lastIndexOf(to));
                 break;
-            case 9:
+            case 8:
                 String[] pals = sc.nextLine().split(" ");
                 i = 0;
                 Chain<String> palabras = new Chain<>();
