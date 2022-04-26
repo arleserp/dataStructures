@@ -66,9 +66,9 @@ public class LinkedQueue implements Queue {
         Object frontElement = front.element;
         front = front.next;
         if (isEmpty()) {
-            rear = null;// enable garbage collectionreturnfrontElement;
+            rear = null;// enable garbage collection;
         }
-        return frontElement;
+        return frontElement; //return frontElement
     }
 
 }
